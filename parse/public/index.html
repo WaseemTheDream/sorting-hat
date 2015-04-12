@@ -5,9 +5,41 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
   </head>
-  <body>
-    <h1>Yolo</h1>
+  <body ng-app="SortingHatApp" ng-controller="MainCtrl">
+    <h1>{{ appTitle }}</h1>
 
+    <ol>
+      <lh>Gryffindor</lh>
+      <li ng-repeat="guest in guests | filter: { attributes: { house: 'Gryffindor' }} | orderBy:'-attributes.score'">
+        {{ guest.attributes.name }}: <span class="score">{{ guest.attributes.score }}</span>
+      </li>
+    </ol>
+
+    <ol>
+      <lh>Ravenclaw</lh>
+      <li ng-repeat="guest in guests | filter: { attributes: { house: 'Ravenclaw' }} | orderBy: '-attributes.score' : reverse">
+        {{ guest.attributes.name }}: <span class="score">{{ guest.attributes.score }}</span>
+      </li>
+    </ol>
+
+    <ol>
+      <lh>Hufflepuff</lh>
+      <li ng-repeat="guest in guests | filter: { attributes: { house: 'Hufflepuff' }} | orderBy: '-attributes.score' : reverse">
+        {{ guest.attributes.name }}: <span class="score">{{ guest.attributes.score }}</span>
+      </li>
+    </ol>
+
+    <ol>
+      <lh>Slytherin</lh>
+      <li ng-repeat="guest in guests | filter: { attributes: { house: 'Slytherin' }} | orderBy: '-attributes.score' : reverse">
+        {{ guest.attributes.name }}: <span class="score">{{ guest.attributes.score }}</span>
+      </li>
+    </ol>
+
+
+
+    <script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
