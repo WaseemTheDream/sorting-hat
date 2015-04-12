@@ -1,0 +1,48 @@
+@font-face {
+  font-family: HarryPotter;
+  src: url("/fonts/harry-p.TTF");
+}
+
+.scoreboard-row {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+body {
+  background: url(/img/castle-background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  font-family: HarryPotter;
+  text-align: center;
+  font-size: 76px;
+  color: #EEEEEE;
+}
+
+h2 {
+  font-family: HarryPotter;
+  text-align: center;
+  color: #DDDDDD;
+  font-size: 48px;
+  font-style: italic;
+}
+
+h3 {
+  font-size: 48px;
+  font-style: bold;
+  text-align: center;
+  font-family: HarryPotter;
+  color: #EEEEEE;
+}
+
+ol {
+  font-family: HarryPotter;
+  font-size: 36px;
+  font-family: HarryPotter;
+  color: #EEEEEE;
+}
+

@@ -10,7 +10,8 @@ SortingHatApp.run(function() {
 });
 
 SortingHatApp.controller('MainCtrl', function($scope) {
-  $scope.appTitle = "Sorting Hat @ 623";
+  $scope.appTitle = "The Wizarding School at 623";
+  $scope.appSubtitle = "The boy who turned 24";
   $scope.Guest = Parse.Object.extend('Guest');
   $scope.guests = [];
 
