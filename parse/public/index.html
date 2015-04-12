@@ -6,55 +6,29 @@
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/css/sorting-hat.css" rel="stylesheet">
   </head>
-  <body ng-app="SortingHatApp" ng-controller="MainCtrl">
-    <h1>{{ appTitle }}</h1>
-    <h2>{{ appSubtitle }}</h2>
+  <body ng-app="SortingHatApp">
+    <!-- App Header -->
+    <h1>The Wizarding School at 623</h1>
+    <h2>The boy who turned 24</h2>
 
     <div class="container">
-
-      <div class="row scoreboard-row">
-        <div class="col-md-6">
-          <h3>Gryffindor</h3>
-          <ol>
-            <li ng-repeat="guest in guests | filter: { attributes: { house: 'Gryffindor' }} | orderBy:'-attributes.score'">
-              {{ guest.attributes.name }}: <span class="score">{{ guest.attributes.score }}</span>
-            </li>
-          </ol>
-        </div>
-        <div class ="col-md-6">
-          <h3>Ravenclaw</h3>
-          <ol>
-            <li ng-repeat="guest in guests | filter: { attributes: { house: 'Ravenclaw' }} | orderBy: '-attributes.score' : reverse">
-              {{ guest.attributes.name }}: <span class="score">{{ guest.attributes.score }}</span>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="row scoreboard-row">
-        <div class="col-md-6">
-          <h3>Hufflepuff</h3>
-          <ol>
-            <li ng-repeat="guest in guests | filter: { attributes: { house: 'Hufflepuff' }} | orderBy: '-attributes.score' : reverse">
-              {{ guest.attributes.name }}: <span class="score">{{ guest.attributes.score }}</span>
-            </li>
-          </ol>
-        </div>
-        <div class="col-md-6">
-          <h3>Slytherin</h3>
-          <ol>
-            <li ng-repeat="guest in guests | filter: { attributes: { house: 'Slytherin' }} | orderBy: '-attributes.score' : reverse">
-              {{ guest.attributes.name }}: <span class="score">{{ guest.attributes.score }}</span>
-            </li>
-          </ol>
-        </div>
+      <div id="page-view" ng-view="">
+        <!-- Page View Goes Here -->
       </div>
     </div>
 
-
-
-    <script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+    <!--  Libraries -->
+    <script src="//www.parsecdn.com/js/parse-1.2.19.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+
+
+    <!-- AngularJS Modules -->
+    <script src="/js/SortingHatApp.js"></script>
+
+    <!-- AngularJS Controllers -->
+    <script src="/js/MainCtrl.js"></script>
+    <script src="/js/SortingHatCtrl.js"></script>
+    <script src="/js/ScoreboardCtrl.js"></script>
   </body>
 </html>

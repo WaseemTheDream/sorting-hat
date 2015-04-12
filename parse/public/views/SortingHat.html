@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+  <h2>Sorting Hat</h2>
+  <h3>Your fate awaits you</h3>
+  <div ng-hide="showGif || sorted" class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">@</span>
+    <input ng-model="muggleName" type="text" class="form-control" placeholder="Your name" aria-describedby="sizing-addon1">
+  </div>  
+  <a ng-hide="showGif || sorted" class="btn btn-primary btn-lg" 
+     ng-click="doIt();"
+     type="button">
+    Get Sorted
+  </a>
+  <h3 ng-show="showGif">Sorting... {{ timeLeft }}</h3>
+  <img ng-show="showGif" src="/img/sortinghat.gif"></img>
+  <h3 ng-show="sorted">You got:</h3>
+  <h2 ng-show="sorted">{{ muggleHouse }}!</h2>
+  <a class="btn btn-success btn-lg" 
+     ng-show="sorted"
+     href="/#/scoreboard" 
+     type="button">
+    View Scoreboard
+  </a>
+  </div>
+</div>
